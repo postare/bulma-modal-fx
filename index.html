@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulma Modal Fx</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+  <link rel="stylesheet" href="/assets/css/modal-fx.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+  <section class="hero is-primary is-medium">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">
+          Modal FX
+        </h1>
+        <h2 class="subtitle">
+          Modal effects for Bulma css
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae unde doloremque eveniet quos. Eaque amet, quibusdam voluptates
+    magni et delectus atque nobis eum. Numquam illo consequuntur optio, dolores placeat aliquam.
+  </section>
+  <section class="section">
+    <h3 class="title is-3">
+      Effects
+    </h3>
+    <div class="buttons">
+      <span class="button is-primary is-medium modal-button" data-target="modal-normal">normal</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-fadeInScale">fadeInScale</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-slideRight">slideRight</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-slideLeft">slideLeft</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-slideTop">slideTop</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-slideBottom">slideBottom</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-fall">fall</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-slideFall">slideFall</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-newsPaper">newsPaper</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dFlipVertical">3dFlipVertical</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dFlipHorizontal">3dFlipHorizontal</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dSign">3dSign</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dSignDown">3dSignDown</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-superScaled">superScaled</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dSlit">3dSlit</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dRotateFromBottom">3dRotateFromBottom</span>
+      <span class="button is-primary is-medium modal-button" data-target="modal-3dRotateFromLeft">3dRotateFromLeft</span>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container has-text-centered">    
+        <p>
+          <small>
+            Source code licensed <a href="https://opensource.org/licenses/mit-license.php">MIT</a>.
+            <br>
+            Website content licensed <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+          </small>
+        </p>
+    </div>
+  </footer>
+  <!-- normal -->
+  <div id="modal-normal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- fadeInScale -->
+  <div id="modal-fadeInScale" class="modal modal-fx-fadeInScale">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+        </header>
+        <section class="modal-card-body">
+          <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <figure>
+              <pre><code contenteditable spellcheck="false">.modal-fx-fadeInScale</code></pre>
+            </figure>
+          </div>
+        </section>
+      </div>
+      </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- slideRight -->
+  <div id="modal-slideRight" class="modal modal-fx-slideRight">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- slideLeft -->
+  <div id="modal-slideLeft" class="modal modal-fx-slideLeft">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- slideTop -->
+  <div id="modal-slideTop" class="modal modal-fx-slideTop">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- slideBottom -->
+  <div id="modal-slideBottom" class="modal modal-fx-slideBottom">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- fall -->
+  <div id="modal-fall" class="modal modal-fx-fall">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- slideFall -->
+  <div id="modal-slideFall" class="modal modal-fx-slideFall">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- newsPaper -->
+  <div id="modal-newsPaper" class="modal modal-fx-newsPaper">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- newsPaper -->
+  <div id="modal-3dFlipVertical" class="modal modal-fx-3dFlipVertical">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- 3dFlipHorizontal -->
+  <div id="modal-3dFlipHorizontal" class="modal modal-fx-3dFlipHorizontal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- 3dSign -->
+  <div id="modal-3dSign" class="modal modal-fx-3dSign">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- 3dSignDown -->
+  <div id="modal-3dSignDown" class="modal modal-fx-3dSignDown">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- superScaled -->
+  <div id="modal-superScaled" class="modal modal-fx-superScaled">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- 3dSlit -->
+  <div id="modal-3dSlit" class="modal modal-fx-3dSlit">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- 3dRotateFromBottom -->
+  <div id="modal-3dRotateFromBottom" class="modal modal-fx-3dRotateFromBottom">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- 3dRotateFromLeft -->
+  <div id="modal-3dRotateFromLeft" class="modal modal-fx-3dRotateFromLeft">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+    <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Modal title</p>
+            </header>
+            <section class="modal-card-body">
+              <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
+              </div>
+            </section>
+          </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script>
+    // Modal
+    $(document).on('click', '.modal-button', function () {
+      var modal = $(this).attr('data-target');
+      var fx = $(this).attr('data-fx');
+      $('#' + modal).toggleClass('is-active');
+    });
+    
+    $(document).on('click', '.modal-close', function () {
+      $(this).parent().toggleClass('is-active');
+    });
+    $(document).on('click', '.modal-background', function () {
+      $(this).parent().toggleClass('is-active');
+    });
+
+    // Menu
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+  </script>
+</body>
+
+</html>
