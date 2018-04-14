@@ -7,6 +7,8 @@ var gulp  = require('gulp'),
   rename = require('gulp-rename'),
   postcss      = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
+  expect = require('gulp-expect-file'), 
+  uglify = require('gulp-uglify'),
   del = require('del'),
   browserSync = require("browser-sync").create();
 
@@ -27,10 +29,10 @@ gulp.task('styles', function() {
       'Android >= 4',
       'Opera >= 12']})]))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/css/'))
     .pipe(cleanCss())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/'))
+    .pipe(gulp.dest('dist/css/'))
     .pipe(browserSync.stream());
 });
 
@@ -39,12 +41,30 @@ function handleError (error) {
   this.emit('end')
 }
 
+gulp.task("scripts", function() {
+  var files = [
+    "src/_js/**/*.js"
+  ];
+
+  return gulp
+    .src(files)
+    .pipe(expect(files))
+    .on('error', handleError)
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest("dist/js/"))
+    .pipe(uglify())
+    .pipe(rename({suffix: '.min'}))
+    .pipe(gulp.dest("dist/js/"))
+    .pipe(browserSync.stream());
+}); 
+
 gulp.task('watch', ['styles'], function() {
   gulp.watch(['src/_scss/**/*.scss'], ['styles']);
+  gulp.watch(['src/_js/**/*.js'], ['scripts']);
 });
 
 gulp.task(
-  "live",["watch", "styles"], 
+  "live",["watch", "scripts", "styles"], 
   function() {
     browserSync.init({
       server: {
@@ -53,6 +73,7 @@ gulp.task(
   });
     
   gulp.watch("src/_scss/**/*.scss", ["watch"]);
+  gulp.watch("src/_js/**/*.js", ["watch"]);
   gulp.watch("**/*.html").on("change", browserSync.reload);
 });
 
@@ -60,5 +81,5 @@ gulp.task('clean', function() {
   return del("dist");
 });
 
-gulp.task("default", ["styles"], function() {
+gulp.task("default", ["styles", "scripts"], function() {
 });
