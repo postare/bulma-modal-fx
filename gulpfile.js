@@ -7,8 +7,6 @@ var gulp  = require('gulp'),
   rename = require('gulp-rename'),
   postcss      = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
-  expect = require('gulp-expect-file'), 
-  uglify = require('gulp-uglify'),
   del = require('del'),
   browserSync = require("browser-sync").create();
 
@@ -41,38 +39,12 @@ function handleError (error) {
   this.emit('end')
 }
 
-gulp.task("scripts", function() {
-  var files = [
-    // Plugins
-    /*
-    "node_modules/jquery/dist/jquery.slim.js",
-    "node_modules/bootstrap/dist/js/bootstrap.js",
-    "node_modules/hiraku/js/jquery-hiraku.js",
-    "node_modules/vide/dist/jquery.vide.js",*/
-
-    // Cudtom Scripts
-    "src/_scripts/**/*.js"
-  ];
-
-  return gulp
-    .src(files)
-    .pipe(expect(files))
-    .on('error', handleError)
-    .pipe(concat("main.js"))
-    .pipe(gulp.dest("dist/js/"))
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest("dist/js/"))
-    .pipe(browserSync.stream());
-}); 
-
 gulp.task('watch', ['styles'], function() {
   gulp.watch(['src/_scss/**/*.scss'], ['styles']);
-  gulp.watch(['src/_scripts/**/*.js'], ['scripts']);
 });
 
 gulp.task(
-  "live",["watch", "scripts", "styles"], 
+  "live",["watch", "styles"], 
   function() {
     browserSync.init({
       server: {
@@ -81,7 +53,6 @@ gulp.task(
   });
     
   gulp.watch("src/_scss/**/*.scss", ["watch"]);
-  gulp.watch("src/_scripts/**/*.js", ["watch"]);
   gulp.watch("**/*.html").on("change", browserSync.reload);
 });
 
@@ -89,5 +60,5 @@ gulp.task('clean', function() {
   return del("dist");
 });
 
-gulp.task("default", ["styles", "scripts"], function() {
+gulp.task("default", ["styles"], function() {
 });
