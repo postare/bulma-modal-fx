@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bulma Modal Fx</title>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
-    <link rel="stylesheet" href="dist/css/modal.min.css">
+    <link rel="stylesheet" href="dist/css/modal-fx.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
     <style>
-        pre {
-            background-color: #23241f;
-        }
+        pre { background-color: #23241f; }
     </style>
 </head>
 
@@ -29,8 +27,7 @@
         </div>
     </section>
     <section class="section">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae unde doloremque eveniet quos. Eaque amet, quibusdam voluptates
-        magni et delectus atque nobis eum. Numquam illo consequuntur optio, dolores placeat aliquam.
+        <p>A set of modal window effects with CSS transitions and animations for Bulma. Very inspired by this Codrops resource/article <a href="https://github.com/codrops/ModalWindowEffects">https://github.com/codrops/ModalWindowEffects</a></p>
     </section>
     <section class="section">
         <h3 class="title is-3">
@@ -464,16 +461,15 @@
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
-    <script src="/dist/js/main.min.js"></script>
+    <script src="/dist/js/modal-fx.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>
-        
+        // highlight.js
         (function () {
             document.querySelectorAll('pre code').forEach(function (block) {
                 hljs.highlightBlock(block);
             });
         })();
-
     </script>
 </body>
 

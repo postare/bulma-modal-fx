@@ -50,7 +50,7 @@ gulp.task("scripts", function() {
     .src(files)
     .pipe(expect(files))
     .on('error', handleError)
-    .pipe(concat("main.js"))
+    .pipe(concat("modal-fx.js"))
     .pipe(gulp.dest("dist/js/"))
     .pipe(uglify())
     .pipe(rename({suffix: '.min'}))
