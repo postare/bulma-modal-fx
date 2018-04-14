@@ -7,6 +7,12 @@
     <title>Bulma Modal Fx</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
     <link rel="stylesheet" href="dist/modal.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+    <style>
+        pre {
+            background-color: #23241f;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,6 +57,79 @@
         </div>
     </section>
 
+    <section class="section">
+        <h3 class="title is-3">
+            Code
+        </h3>
+        <figure class="highlight">
+            <pre><code class="html">// trigger button
+&lt;span class="button modal-button" data-target="modal-id">normal&lt;/span>
+
+// related modal
+&lt;div id="modal-id" class="modal modal-fx-fadeInScale"&gt;
+    &lt;div class="modal-background">&lt;/div&gt;
+    &lt;div class="modal-content"&gt;
+        &lt;!-- content --&gt;
+        &lt;div class="box"&gt;
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+            Beatae cum enim quisquam ducimus, facilis, esse nesciunt porro,
+            officiis totam veniam libero! Nisi hic vel aspernatur doloremque 
+            enim ut blanditiis perferendis, repudiandae.
+        &lt;/div&gt;
+        &lt;!-- end content --&gt;
+    &lt;/div&gt;
+    &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+// modal active with modifier "is-active" 
+&lt;div id="modal-id" class="modal modal-fx-fadeInScale is-active"&gt;&lt;/div&gt;[...]
+</code></pre>
+        </figure>
+
+            <h4 class="title is-4">
+                Trigger modal example javascript
+            </h4>
+            <figure class="highlight">
+                <pre><code class="javascript">// Trigger modals
+(function () {
+    var modalFX = (function () {
+
+        var onClickEach = function (selector, callback) {
+            var arr = document.querySelectorAll(selector);
+            arr.forEach(function (el) {
+                el.addEventListener('click', callback);
+            })
+        };
+
+        var events = function () {
+            onClickEach('.modal-button', openModal);
+            onClickEach('.modal-close', closeModal);
+            onClickEach('.modal-background', closeModal);
+        };
+
+        var openModal = function () {
+            var modal = this.getAttribute('data-target');
+            document.getElementById(modal).classList.add('is-active');
+        }
+
+        var closeModal = function () {
+            var modal = this.parentElement.id;
+            document.getElementById(modal).classList.remove('is-active');
+        }
+
+        return {
+            init: function () {
+                events();
+            }
+        }
+    })();
+
+    modalFX.init();
+
+})();
+    </code></pre>
+</figure>
+</section>
     <footer class="footer">
         <div class="container has-text-centered">
             <p>
@@ -386,44 +465,53 @@
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>
-    (function () {
-        var modalFX = (function () {
-
-            var onClickEach = function(selector, callback) {
-                var arr = document.querySelectorAll(selector);
-                arr.forEach(function(el){
-                    el.addEventListener('click', callback);
-                })
-            };
-
-            var events = function () {
-                onClickEach('.modal-button', openModal);
-                onClickEach('.modal-close', closeModal);
-                onClickEach('.modal-background', closeModal);
-            };
-
-            var openModal = function () {
-                var modal = this.getAttribute('data-target');
-                document.getElementById(modal).classList.add('is-active');
-            }
-
-            var closeModal = function () {
-                var modal = this.parentElement.id;
-                document.getElementById(modal).classList.remove('is-active');
-            }
-
-            return {
-                init: function () {
-                    events();
-                }
-            }
+        
+        (function () {
+            document.querySelectorAll('pre code').forEach(function (block) {
+                hljs.highlightBlock(block);
+            });
         })();
 
-        modalFX.init();
 
-    })();
+        // Trigger modals
+        (function () {
+            var modalFX = (function () {
+
+                var onClickEach = function (selector, callback) {
+                    var arr = document.querySelectorAll(selector);
+                    arr.forEach(function (el) {
+                        el.addEventListener('click', callback);
+                    })
+                };
+
+                var events = function () {
+                    onClickEach('.modal-button', openModal);
+                    onClickEach('.modal-close', closeModal);
+                    onClickEach('.modal-background', closeModal);
+                };
+
+                var openModal = function () {
+                    var modal = this.getAttribute('data-target');
+                    document.getElementById(modal).classList.add('is-active');
+                }
+
+                var closeModal = function () {
+                    var modal = this.parentElement.id;
+                    document.getElementById(modal).classList.remove('is-active');
+                }
+
+                return {
+                    init: function () {
+                        events();
+                    }
+                }
+            })();
+
+            modalFX.init();
+
+        })();
     </script>
 </body>
 
