@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <style>
         pre { background-color: #fafafa; }
-        p { margin-bottom: 1rem }
+        .container p { margin-bottom: 1rem }
         ul li { margin: 10px 20px; 0}
         .spacer { margin: 3rem 0 0 }
         a.link { border-bottom: 1px dashed rgba(255, 255, 255, .8) }
@@ -73,6 +73,7 @@
             <span class="button is-warning is-medium modal-button" data-target="modal-image">Image modal</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-image2">Image modal "huge"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-card">Card "tiny"</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-fadeInScale-fs">Modal Card "full-screen"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-top">3dSign "top"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-bottom">3dSignDown "bottom"</span>
         </div>
@@ -126,18 +127,19 @@
                 Modifiers
             </h3>
             
-            <p>Class modifiers <code>.modal-content</code>:</p>
-            <ul>
-                <li><code>.is-huge</code>: 100% width modal</li>
-                <li><code>.is-tiny</code>: 400px width modal</li>
-            </ul>
-
-            <div class="spacer"></div>
-            
             <p>Class modifiers <code>.modal</code>:</p>
             <ul>
                 <li><code>.modal-pos-top</code>: modal positioned on top</li>
                 <li><code>.modal-pos-bottom</code>:  modal positioned on bottom</li>
+                <li><code>.modal-full-screen</code>:  modal full screen</li>
+            </ul>
+
+            <div class="spacer"></div>
+
+            <p>Class modifiers <code>.modal-content</code>:</p>
+            <ul>
+                <li><code>.is-huge</code>: 100% width modal</li>
+                <li><code>.is-tiny</code>: 400px width modal</li>
             </ul>
 
             <div class="spacer"></div>           
@@ -151,6 +153,26 @@
         &lt;!-- Any other Bulma elements you want --&gt;
     &lt;/div&gt;
     &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+
+            <p>Example full screen modal card:</p>
+            <p></p>
+            <figure class="highlight">
+                <pre><code class="html">&lt;div id="modal-fadeInScale-fs" class="modal modal-full-screen modal-fx-fadeInScale"&gt;
+    &lt;div class="modal-content modal-card"&gt;
+        &lt;header class="modal-card-head"&gt;
+            &lt;p class="modal-card-title"&gt;Modal title&lt;/p&gt;
+            &lt;button class="modal-button-close delete" aria-label="close"&gt;&lt;/button&gt;
+        &lt;/header&gt;
+        &lt;section class="modal-card-body"&gt;
+        &lt;!-- Modal card body --&gt;
+        &lt;/section&gt;
+        &lt;footer class="modal-card-foot"&gt;
+            &lt;button class="modal-button-close button is-success"&gt;Save changes&lt;/button&gt;
+            &lt;button class="modal-button-close button"&gt;Cancel&lt;/button&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
 &lt;/div&gt;</code></pre>
             </figure>
         </div>
@@ -535,6 +557,28 @@ $modal-bg-color: rgba($black,.86);</code></pre>
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
+    <!-- modal-fadeInScale-fs top -->
+    <div id="modal-fadeInScale-fs" class="modal modal-full-screen modal-fx-fadeInScale">
+        <div class="modal-content modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="modal-button-close delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae cum enim quisquam ducimus, facilis, esse nesciunt porro,
+                officiis totam veniam libero! Nisi hic vel aspernatur doloremque enim ut blanditiis perferendis, repudiandae
+                assumenda quibusdam delectus quam eum non maxime ullam quod qui ab in dolorem dolores vero amet! Perferendis
+                incidunt unde blanditiis harum vel velit, accusantium praesentium autem ut voluptas, voluptatibus fugiat. Molestiae
+                maiores aspernatur expedita, magnam commodi suscipit explicabo labore temporibus tenetur distinctio mollitia
+                facere eum ad officia? Sit eaque culpa ea saepe facilis. Consequatur, architecto. Optio eveniet cupiditate accusantium
+                vero consectetur, maiores eum culpa assumenda reprehenderit sequi aut nihil!
+            </section>
+            <footer class="modal-card-foot">
+                <button class="modal-button-close button is-success">Save changes</button>
+                <button class="modal-button-close button">Cancel</button>
+            </footer>
+        </div>
+    </div>
     <!-- 3dSign top -->
     <div id="modal-3dSign-top" class="modal modal-pos-top modal-fx-3dSign">
         <div class="modal-background"></div>
@@ -590,33 +634,34 @@ $modal-bg-color: rgba($black,.86);</code></pre>
         <div class="modal-content is-tiny">
             <!-- content -->
             <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
+                <div class="card-image">
+                    <figure class="image is-4by3">
                         <img src="img/card.jpg" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media">
                         <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="img/avatar.jpg" alt="Placeholder image">
-                          </figure>
+                            <figure class="image is-48x48">
+                                <img src="img/avatar.jpg" alt="Placeholder image">
+                            </figure>
                         </div>
                         <div class="media-content">
-                          <p class="title is-4">John Doe</p>
-                          <p class="subtitle is-6">@johndoe</p>
+                            <p class="title is-4">John Doe</p>
+                            <p class="subtitle is-6">@johndoe</p>
                         </div>
-                      </div>
-                  
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
+                    </div>
+    
+                    <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.
+                        <a>@bulmaio</a>.
+                        <a href="#">#css</a>
+                        <a href="#">#responsive</a>
                         <br>
                         <time datetime="2018-1-1">12:30 PM - 16 Mar 2018</time>
-                      </div>
                     </div>
-                  </div>
+                </div>
+            </div>
             <!-- end content -->
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
