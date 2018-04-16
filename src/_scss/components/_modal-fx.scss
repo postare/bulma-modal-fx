@@ -1,0 +1,328 @@
+
+
+.modal {
+    display: flex;
+    visibility: hidden;
+
+    // Common fx modal background
+    .modal-background {
+        transition: all $transition-duration;
+        opacity: 0;
+    }
+
+    &.is-active {
+        visibility: visible;
+        .modal-background {
+            opacity: 1;
+        }
+    }
+
+    // Fx modal content
+    // .modal-fx-fadeInScale
+    &.modal-fx {
+        
+        &-fadeInScale {
+            .modal-content {
+                transform: scale(0.7);
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+        
+            &.is-active {
+                .modal-content {
+                    transform: scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-slideRight {
+            .modal-content {
+                transform: translateX(20%);
+                opacity: 0;
+                transition: all $transition-duration cubic-bezier(0.25, 0.5, 0.5, 0.9);
+            }
+            
+            &.is-active .modal-content {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        &-slideLeft {
+            .modal-content {
+                transform: translateX(-20%);
+                opacity: 0;
+                transition: all $transition-duration cubic-bezier(0.25, 0.5, 0.5, 0.9);
+            }
+            
+            &.is-active .modal-content {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        &-slideBottom {
+            .modal-content {
+                transform: translateY(20%);
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+            
+            &.is-active .modal-content {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        &-slideTop {
+            .modal-content {
+                transform: translateY(-20%);
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+            
+            &.is-active .modal-content {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        &-fall {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                transform-style: preserve-3d;
+                transform: translateZ(600px) rotateX(20deg); 
+                opacity: 0;
+            }
+            
+            &.is-active .modal-content {
+                transition: all $transition-duration ease-in;
+                transform: translateZ(0px) rotateX(0deg); 
+                opacity: 1;
+            } 
+        }
+
+        &-slideFall {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                transform-style: preserve-3d;
+                transform: translate(30%) translateZ(600px) rotate(10deg); 
+                opacity: 0;
+            }
+
+            &.is-active .modal-content {
+                transition: all $transition-duration ease-in;
+                transform: translate(0%) translateZ(0) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-newsPaper {
+            .modal-content {
+                transform: scale(0) rotate(720deg);
+                opacity: 0;
+            }
+            
+            .modal-background,
+            .modal-content {
+                transition: all $transition-duration-newsPaper;
+            }
+            
+            &.is-active .modal-content {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-3dFlipVertical {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+        
+            .modal-content {
+                transform-style: preserve-3d;
+                transform: rotateX(-70deg);
+                transition: all $transition-duration;
+                opacity: 0;
+            }
+        
+            &.is-active .modal-content {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-3dFlipHorizontal {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                transform-style: preserve-3d;
+                transform: rotateY(-70deg);
+                transition: all $transition-duration;
+                opacity: 0;
+            }
+            
+            &.is-active .modal-content {
+                transform: rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-3dSign {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                position: relative;
+                transform-style: preserve-3d;
+                transform: rotateX(-60deg);
+                transform-origin: 50% 0;
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+            
+            &.is-active .modal-content {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-3dSignDown {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                position: relative;
+                transform-style: preserve-3d;
+                transform: rotateX(60deg);
+                transform-origin: 0 100%;
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+            
+            &.is-active .modal-content {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-superScaled {
+            .modal-content {
+                transform: scale(2);
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+            
+            &.is-active .modal-content {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        &-3dSlit {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                transform-style: preserve-3d;
+                transform: translateZ(-3000px) rotateY(90deg);
+                opacity: 0;
+            }
+            
+            &.is-active .modal-content {
+                animation: slit $transition-duration-3dslit forwards ease-out;
+            }
+            
+            @keyframes slit {
+                50% { transform: translateZ(-250px) rotateY(89deg); opacity: 1; animation-timing-function: ease-in;}
+                100% { transform: translateZ(0) rotateY(0deg); opacity: 1; }
+            }
+        }
+
+        &-3dRotateFromBottom {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content{
+                transform-style: preserve-3d;
+                transform: translateY(100%) rotateX(90deg);
+                transform-origin: 0 100%;
+                opacity: 0;
+                transition: all $transition-duration ease-out;
+            }
+            
+            &.is-active .modal-content{
+                transform: translateY(0%) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        &-3dRotateFromLeft {
+            &.modal {
+                perspective: $modal-perspective;
+            }
+            
+            .modal-content {
+                transform-style: preserve-3d;
+                transform: translateZ(100px) translateX(-30%) rotateY(90deg);
+                transform-origin: 0 100%;
+                opacity: 0;
+                transition: all $transition-duration;
+            }
+            
+            &.is-active .modal-content {
+                transform: translateZ(0px) translateX(0%) rotateY(0deg);
+                opacity: 1;
+            }
+        }
+
+    }
+
+    // sizes
+    .modal-content {
+        @include from($tablet) {
+            &.is-huge {
+                width: 100%;
+                margin: 0px 20px;
+            }
+        }
+        &.is-tiny {
+            max-width: 400px;
+        }
+    }
+
+    // Positioning, center is default
+    // .modal-pos-top
+    &.modal-pos {
+        &-top {
+            align-items: flex-start;
+            .modal-content {
+                margin-top: 1rem;
+            }
+        }
+        &-bottom {
+            align-items: flex-end;
+            .modal-content {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .modal-background {
+        background-color: $modal-bg-color;
+    }
+}
+
