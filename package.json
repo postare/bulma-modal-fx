@@ -9,6 +9,7 @@
   "devDependencies": {
     "autoprefixer": "^7.2.3",
     "browser-sync": "^2.23.6",
+    "bulma": "^0.7.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.9.1",
@@ -20,8 +21,5 @@
     "gulp-scss-lint": "^0.4.0",
     "gulp-sourcemaps": "^2.6.2",
     "gulp-uglify": "^3.0.0"
-  },
-  "dependencies": {
-    "bulma": "^0.7.0"
   }
 }
