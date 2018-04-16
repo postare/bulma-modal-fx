@@ -7,6 +7,7 @@
             active: 'is-active',
             button: '.modal-button',
             close: '.modal-close',
+            buttonClose: '.modal-button-close',
             background: '.modal-background'
         };
 
@@ -21,6 +22,7 @@
             onClickEach(elements.button, openModal);
 
             onClickEach(elements.close, closeModal);
+            onClickEach(elements.buttonClose, closeAll);
             onClickEach(elements.background, closeModal);
 
             // Close all modals if ESC key is pressed
