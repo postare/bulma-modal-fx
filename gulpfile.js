@@ -28,6 +28,7 @@ gulp.task('styles', function() {
       'Android 2.3',
       'Android >= 4',
       'Opera >= 12']})]))
+    .pipe(concat("modal-fx.css"))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist/css/'))
     .pipe(cleanCss())

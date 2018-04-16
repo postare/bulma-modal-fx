@@ -96,6 +96,14 @@
 (function () {
     var modalFX = (function () {
 
+        var elements = {
+            target: 'data-target',
+            active: 'is-active',
+            button: '.modal-button',
+            close: '.modal-close',
+            background: '.modal-background'
+        };
+
         var onClickEach = function (selector, callback) {
             var arr = document.querySelectorAll(selector);
             arr.forEach(function (el) {
@@ -104,6 +112,10 @@
         };
 
         var events = function () {
+            onClickEach(elements.button, openModal);
+
+            onClickEach(elements.close, closeModal);
+            onClickEach(elements.background, closeModal);
 
             // Close all modals if ESC key is pressed
             document.addEventListener('keyup', function(key){
@@ -111,27 +123,37 @@
                     closeAll();
                 }
             });
-
-            onClickEach('.modal-button', openModal);
-            onClickEach('.modal-close', closeModal);
-            onClickEach('.modal-background', closeModal);
         };
 
         var closeAll = function() {
-            var openModal = document.querySelectorAll('.is-active');
+            var openModal = document.querySelectorAll('.' + elements.active);
             openModal.forEach(function (modal) {
-                modal.classList.remove('is-active');
+                modal.classList.remove(elements.active);
             })
+            unFreeze();            
         };
 
         var openModal = function () {
-            var modal = this.getAttribute('data-target');
-            document.getElementById(modal).classList.add('is-active');
+            var modal = this.getAttribute(elements.target);
+            freeze();
+            document.getElementById(modal).classList.add(elements.active);
         };
 
         var closeModal = function () {
             var modal = this.parentElement.id;
-            document.getElementById(modal).classList.remove('is-active');
+            document.getElementById(modal).classList.remove(elements.active);
+            unFreeze();
+        };
+
+        // Freeze scrollbars
+        var freeze = function () {
+            document.getElementsByTagName('html')[0].style.overflow = "hidden"
+            document.getElementsByTagName('body')[0].style.overflowY = "scroll";
+        };
+        
+        var unFreeze = function () {
+            document.getElementsByTagName('html')[0].style.overflow = ""
+            document.getElementsByTagName('body')[0].style.overflowY = "";
         };
 
         return {

@@ -296,17 +296,27 @@
     -webkit-transform: translateZ(0px) translateX(0%) rotateY(0deg);
             transform: translateZ(0px) translateX(0%) rotateY(0deg);
     opacity: 1; }
+  @media screen and (min-width: 769px) {
+    .modal .modal-content.is-huge {
+      width: 100%;
+      margin: 0px 20px; } }
+  .modal .modal-content.is-tiny {
+    max-width: 400px; }
   .modal.modal-pos-top {
     -webkit-box-align: start;
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
             align-items: flex-start; }
+    .modal.modal-pos-top .modal-content {
+      margin-top: 1rem; }
   .modal.modal-pos-bottom {
     -webkit-box-align: end;
     -webkit-align-items: flex-end;
         -ms-flex-align: end;
             align-items: flex-end; }
-  .modal.modal-bg-primary .modal-background {
-    background-color: rgba(0, 209, 178, 0.86); }
+    .modal.modal-pos-bottom .modal-content {
+      margin-bottom: 1rem; }
+  .modal .modal-background {
+    background-color: rgba(10, 10, 10, 0.86); }
 
 /*# sourceMappingURL=modal-fx.css.map */
