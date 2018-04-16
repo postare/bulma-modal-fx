@@ -2,7 +2,7 @@
 (function () {
     var modalFX = (function () {
 
-        let elements = {
+        var elements = {
             target: 'data-target',
             active: 'is-active',
             button: '.modal-button',
