@@ -7,9 +7,12 @@
     <title>Bulma Modal Fx</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
     <link rel="stylesheet" href="dist/css/modal-fx.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
     <style>
-        pre { background-color: #23241f; }
+        pre { background-color: #fafafa; }
+        p { margin-bottom: 1rem }
+        ul li { margin: 10px 20px; 0}
+        .spacer { margin: 3rem 0 0}
     </style>
 </head>
 
@@ -33,7 +36,7 @@
     </section>
     <section class="section">
         <div class="container">
-        <h3 class="title is-3">
+        <h3 class="title is-4">
             Effects
         </h3>
         <div class="buttons">
@@ -59,116 +62,100 @@
     </section>
 
     <section class="section">
-            <div class="container">
-        <h3 class="title is-3">
-            Code
+        <div class="container">
+        <h3 class="title is-4">
+            Examples
         </h3>
-        <figure class="highlight">
-            <pre><code class="html">// trigger button
-&lt;span class="button modal-button" data-target="modal-id">normal&lt;/span>
+        <div class="buttons">
+            <span class="button is-warning is-medium modal-button" data-target="modal-image">Image modal</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-image2">Image modal "huge"</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-card">Card "tiny"</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-top">3dSign "top"</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-bottom">3dSignDown "bottom"</span>
+        </div>
+        <div class="container"></div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3 class="title is-4">
+                Getting started
+            </h3>
+            <p>Include the plugin css file:</p>
+            <figure class="highlight">
+                <pre><code class="html">&lt;link rel="stylesheet" href="dist/css/modal-fx.min.css" /&gt;</code></pre>
+            </figure>
+            <p>Include the plugin just before body closing tag:</p>
+            <figure class="highlight">
+                <pre><code class="html">&lt;script type="text/javascript" src="dist/js/modal-fx.min.js"&gt;&lt;/script&gt;</code></pre>
+            </figure>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h3 class="title is-4">
+                Html markup:
+            </h3>
+            <figure class="highlight">
+                <pre><code class="html">// trigger button
+&lt;span class="button modal-button" data-target="modal-id">Open modal&lt;/span&gt;
 
 // related modal with fx class "modal-fx-fadeInScale"
-&lt;div id="modal-id" class="modal modal-fx-fadeInScale"&gt;
-    &lt;div class="modal-background">&lt;/div&gt;
+&lt;div id="modal-id" class="modal <em>modal-fx-fadeInScale</em>"&gt;
+    &lt;div class="modal-background"&gt;&lt;/div&gt;
     &lt;div class="modal-content"&gt;
-        &lt;!-- content --&gt;
-        &lt;div class="box"&gt;
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Beatae cum enim quisquam ducimus, facilis, esse nesciunt porro,
-            officiis totam veniam libero! Nisi hic vel aspernatur doloremque 
-            enim ut blanditiis perferendis, repudiandae.
-        &lt;/div&gt;
-        &lt;!-- end content --&gt;
+        &lt;!-- Any other Bulma elements you want --&gt;
     &lt;/div&gt;
     &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
 &lt;/div&gt;
 
-// modal active with modifier "is-active" 
-&lt;div id="modal-id" class="modal modal-fx-fadeInScale is-active"&gt;&lt;/div&gt;[...]
+// To activate the modal, just add the is-active modifier on the .modal container
+&lt;div id="modal-id" class="modal modal-fx-fadeInScale <em>is-active</em>"&gt;&lt;/div&gt;[...]
 </code></pre>
-        </figure>
+            </figure>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h3 class="title is-4">
+                Modifiers:
+            </h3>
+            
+            <p>Class modifiers <code>.modal-content</code>:</p>
+            <ul>
+                <li><code>.is-huge</code>: 100% width modal</li>
+                <li><code>.is-tiny</code>: 400px width modal</li>
+            </ul>
 
-            <h4 class="title is-4">
-                Trigger modal example javascript
-            </h4>
+            <div class="spacer"></div>
+            
+            <p>Class modifiers <code>.modal</code>:</p>
+            <ul>
+                <li><code>.modal-pos-top</code>: modal positioned on top</li>
+                <li><code>.modal-pos-bottom</code>:  modal positioned on bottom</li>
+            </ul>
+
+            <div class="spacer"></div>           
+
+            <p>Example:</p>
             <figure class="highlight">
-                <pre><code class="javascript">// Trigger modals
-(function () {
-    var modalFX = (function () {
+                    <pre><code class="html">// Tiny bottom positioned modal
+&lt;div id="modal-id" class="modal modal-fx-fadeInScale <em>modal-pos-bottom</em>"&gt;
+    &lt;div class="modal-background"&gt;&lt;/div&gt;
+    &lt;div class="modal-content <em>is-tiny</em>"&gt;
+        &lt;!-- Any other Bulma elements you want --&gt;
+    &lt;/div&gt;
+    &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
+&lt;/div&gt;
 
-        var elements = {
-            target: 'data-target',
-            active: 'is-active',
-            button: '.modal-button',
-            close: '.modal-close',
-            background: '.modal-background'
-        };
-
-        var onClickEach = function (selector, callback) {
-            var arr = document.querySelectorAll(selector);
-            arr.forEach(function (el) {
-                el.addEventListener('click', callback);
-            })
-        };
-
-        var events = function () {
-            onClickEach(elements.button, openModal);
-
-            onClickEach(elements.close, closeModal);
-            onClickEach(elements.background, closeModal);
-
-            // Close all modals if ESC key is pressed
-            document.addEventListener('keyup', function(key){
-                if(key.keyCode == 27) {
-                    closeAll();
-                }
-            });
-        };
-
-        var closeAll = function() {
-            var openModal = document.querySelectorAll('.' + elements.active);
-            openModal.forEach(function (modal) {
-                modal.classList.remove(elements.active);
-            })
-            unFreeze();            
-        };
-
-        var openModal = function () {
-            var modal = this.getAttribute(elements.target);
-            freeze();
-            document.getElementById(modal).classList.add(elements.active);
-        };
-
-        var closeModal = function () {
-            var modal = this.parentElement.id;
-            document.getElementById(modal).classList.remove(elements.active);
-            unFreeze();
-        };
-
-        // Freeze scrollbars
-        var freeze = function () {
-            document.getElementsByTagName('html')[0].style.overflow = "hidden"
-            document.getElementsByTagName('body')[0].style.overflowY = "scroll";
-        };
-        
-        var unFreeze = function () {
-            document.getElementsByTagName('html')[0].style.overflow = ""
-            document.getElementsByTagName('body')[0].style.overflowY = "";
-        };
-
-        return {
-            init: function () {
-                events();
-            }
-        }
-    })();
-
-    modalFX.init();
-
-})();
-    </code></pre>
-</figure>
-<div class="container"></div>
+// To activate the modal, just add the is-active modifier on the .modal container
+&lt;div id="modal-id" class="modal modal-fx-fadeInScale <em>is-active</em>"&gt;&lt;/div&gt;[...]</code></pre>
+            </figure>
+        </div>
+    </section>
+    
 </section>
     <footer class="footer">
         <div class="container has-text-centered">
@@ -353,7 +340,7 @@
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-    <!-- newsPaper -->
+    <!-- 3dFlipVertical -->
     <div id="modal-3dFlipVertical" class="modal modal-fx-3dFlipVertical">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -504,6 +491,121 @@
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
+    
+    <!-- Other Examples -->
+    <!-- Image modal -->
+    <div id="modal-image" class="modal modal-fx-superScaled">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- content -->
+            <p class="image">
+                <img src="/img/moon.jpg" alt="Moon">
+            </p>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- Image modal -->
+    <div id="modal-image2" class="modal modal-fx-superScaled">
+        <div class="modal-background"></div>
+        <div class="modal-content is-huge">
+            <!-- content -->
+            <p class="image">
+                <img src="/img/moon.jpg" alt="Moon">
+            </p>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- 3dSign top -->
+    <div id="modal-3dSign-top" class="modal modal-pos-top modal-fx-3dSign">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- content -->
+            <div class="box">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae cum enim quisquam ducimus, facilis, esse nesciunt porro,
+                officiis totam veniam libero! Nisi hic vel aspernatur doloremque enim ut blanditiis perferendis, repudiandae
+                assumenda quibusdam delectus quam eum non maxime ullam quod qui ab in dolorem dolores vero amet! Perferendis
+                incidunt unde blanditiis harum vel velit, accusantium praesentium autem ut voluptas, voluptatibus fugiat.
+                Molestiae maiores aspernatur expedita, magnam commodi suscipit explicabo labore temporibus tenetur distinctio
+                mollitia facere eum ad officia? Sit eaque culpa ea saepe facilis. Consequatur, architecto. Optio eveniet
+                cupiditate accusantium vero consectetur, maiores eum culpa assumenda reprehenderit sequi aut nihil!
+            </div>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- 3dSign bottom -->
+    <div id="modal-3dSign-bottom" class="modal modal-pos-bottom modal-fx-3dSignDown">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- content -->
+            <div class="box">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae cum enim quisquam ducimus, facilis, esse nesciunt porro,
+                officiis totam veniam libero! Nisi hic vel aspernatur doloremque enim ut blanditiis perferendis, repudiandae
+                assumenda quibusdam delectus quam eum non maxime ullam quod qui ab in dolorem dolores vero amet! Perferendis
+                incidunt unde blanditiis harum vel velit, accusantium praesentium autem ut voluptas, voluptatibus fugiat.
+                Molestiae maiores aspernatur expedita, magnam commodi suscipit explicabo labore temporibus tenetur distinctio
+                mollitia facere eum ad officia? Sit eaque culpa ea saepe facilis. Consequatur, architecto. Optio eveniet
+                cupiditate accusantium vero consectetur, maiores eum culpa assumenda reprehenderit sequi aut nihil!
+            </div>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- 3dFlipVertical -->
+    <div id="modal-3dFlipVertical-tiny" class="modal modal-fx-3dFlipVertical">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+            <!-- content -->
+            <div class="box">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae cum enim quisquam ducimus, facilis, esse nesciunt porro,
+                officiis totam veniam libero!
+            </div>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+    <!-- 3dFlipVertical card tiny -->
+    <div id="modal-card" class="modal modal-fx-3dSlit">
+        <div class="modal-background"></div>
+        <div class="modal-content is-tiny">
+            <!-- content -->
+            <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="/img/card.jpg" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-left">
+                          <figure class="image is-48x48">
+                            <img src="/img/avatar.jpg" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="media-content">
+                          <p class="title is-4">John Doe</p>
+                          <p class="subtitle is-6">@johndoe</p>
+                        </div>
+                      </div>
+                  
+                      <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                        <a href="#">#css</a> <a href="#">#responsive</a>
+                        <br>
+                        <time datetime="2018-1-1">12:30 PM - 16 Mar 2018</time>
+                      </div>
+                    </div>
+                  </div>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+
+
     <script src="dist/js/modal-fx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>
