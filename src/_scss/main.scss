@@ -4,7 +4,7 @@
 @import "../../node_modules/bulma/sass/utilities/derived-variables";
 @import "../../node_modules/bulma/sass/utilities/mixins.sass";
 
-// Setup
+// Modal minimal setup
 $transition-duration: .3s;
 $transition-duration-newsPaper: .7s;
 $transition-duration-3dslit: .5s;
@@ -12,4 +12,5 @@ $transition-duration-3dslit: .5s;
 $modal-perspective: 1300px;
 $modal-bg-color: rgba($black,.86);
 
+// import modal-fx component
 @import "components/modal-fx";

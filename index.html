@@ -31,7 +31,7 @@
     </section>
     <section class="section">
         <div class="container">
-            <p>A set of modal window effects with CSS transitions and animations for Bulma. Very inspired by this Codrops resource/article <a href="https://github.com/codrops/ModalWindowEffects">https://github.com/codrops/ModalWindowEffects</a></p>
+            <p>A set of modal window effects with CSS transitions and animations for Bulma. Very inspired by this Codrops resource/article: <a href="https://github.com/codrops/ModalWindowEffects">https://github.com/codrops/ModalWindowEffects</a></p>
         </div>
     </section>
     <section class="section">
@@ -85,7 +85,7 @@
             <figure class="highlight">
                 <pre><code class="html">&lt;link rel="stylesheet" href="dist/css/modal-fx.min.css" /&gt;</code></pre>
             </figure>
-            <p>Include the plugin just before body closing tag:</p>
+            <p>(optional) Include the plugin just before body closing tag:</p>
             <figure class="highlight">
                 <pre><code class="html">&lt;script type="text/javascript" src="dist/js/modal-fx.min.js"&gt;&lt;/script&gt;</code></pre>
             </figure>
@@ -95,13 +95,13 @@
     <section class="section">
         <div class="container">
             <h3 class="title is-4">
-                Html markup:
+                Html markup
             </h3>
             <figure class="highlight">
-                <pre><code class="html">// trigger button
+                <pre><code class="html">&lt;!-- trigger button --&gt;
 &lt;span class="button modal-button" data-target="modal-id">Open modal&lt;/span&gt;
 
-// related modal with fx class "modal-fx-fadeInScale"
+&lt;!-- related modal with fx class "modal-fx-fadeInScale" --&gt;
 &lt;div id="modal-id" class="modal <em>modal-fx-fadeInScale</em>"&gt;
     &lt;div class="modal-background"&gt;&lt;/div&gt;
     &lt;div class="modal-content"&gt;
@@ -110,7 +110,7 @@
     &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
 &lt;/div&gt;
 
-// To activate the modal, just add the is-active modifier on the .modal container
+&lt;!-- To activate the modal, just add the is-active modifier on the .modal container --&gt;
 &lt;div id="modal-id" class="modal modal-fx-fadeInScale <em>is-active</em>"&gt;&lt;/div&gt;[...]
 </code></pre>
             </figure>
@@ -120,7 +120,7 @@
     <section class="section">
         <div class="container">
             <h3 class="title is-4">
-                Modifiers:
+                Modifiers
             </h3>
             
             <p>Class modifiers <code>.modal-content</code>:</p>
@@ -141,17 +141,32 @@
 
             <p>Example:</p>
             <figure class="highlight">
-                    <pre><code class="html">// Tiny bottom positioned modal
+                <pre><code class="html">// Tiny bottom positioned modal
 &lt;div id="modal-id" class="modal modal-fx-fadeInScale <em>modal-pos-bottom</em>"&gt;
     &lt;div class="modal-background"&gt;&lt;/div&gt;
     &lt;div class="modal-content <em>is-tiny</em>"&gt;
         &lt;!-- Any other Bulma elements you want --&gt;
     &lt;/div&gt;
     &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
-&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </figure>
+        </div>
+    </section>
 
-// To activate the modal, just add the is-active modifier on the .modal container
-&lt;div id="modal-id" class="modal modal-fx-fadeInScale <em>is-active</em>"&gt;&lt;/div&gt;[...]</code></pre>
+    <section class="section">
+        <div class="container">
+            <h3 class="title is-4">
+                Sass variables
+            </h3>
+            
+            <figure class="highlight">
+                <pre><code class="sass">// Modal minimal setup
+$transition-duration: .3s;
+$transition-duration-newsPaper: .7s;
+$transition-duration-3dslit: .5s;
+
+$modal-perspective: 1300px;
+$modal-bg-color: rgba($black,.86);</code></pre>
             </figure>
         </div>
     </section>
