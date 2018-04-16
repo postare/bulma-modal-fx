@@ -84,5 +84,5 @@ $modal-bg-color: rgba($black,.86);
 
 ### install
 `npm i bulma-modal-fx`
-or
-`yarn add bulma-modal-fx`
+
+or simply download latest relase: https://github.com/postare/bulma-modal-fx/releases/download/v1.0.2/bulma-modal-fx-v1.0.2.zip
