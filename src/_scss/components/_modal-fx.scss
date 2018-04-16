@@ -17,6 +17,26 @@
         }
     }
 
+    &.modal-full-screen {
+        .modal-background {
+            background-color: #fff;
+        }
+        .modal-content {
+            width: 100%;
+            height: 100%;
+            max-height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        /*.modal-close {
+            &::before,
+            &::after {
+                background-color: rgba($black, .86);
+            }
+        }*/
+    }
+
     // Fx modal content
     // .modal-fx-fadeInScale
     &.modal-fx {
