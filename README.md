@@ -81,3 +81,8 @@ $transition-duration-3dslit: .5s;
 $modal-perspective: 1300px;
 $modal-bg-color: rgba($black,.86);
 ```
+
+### install
+`npm i bulma-modal-fx`
+or
+`yarn add bulma-modal-fx`
