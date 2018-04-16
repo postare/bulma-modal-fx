@@ -1,6 +1,6 @@
 {
   "name": "bulma-modal-fx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A set of modal window effects with CSS transitions and animations for Bulma.",
   "main": "index.js",
   "repository": "https://github.com/postare/bulma-modal-fx.git",
