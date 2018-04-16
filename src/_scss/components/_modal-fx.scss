@@ -26,15 +26,15 @@
             height: 100%;
             max-height: 100vh;
             margin: 0;
-            background-color: #f2f2f2;
+            background-color: #fff;
         }
 
-        /*.modal-close {
-            &::before,
-            &::after {
-                background-color: rgba($black, .86);
-            }
-        }*/
+        // .modal-close {
+        //     &::before,
+        //     &::after {
+        //         background-color: rgba($black, .86);
+        //     }
+        // }
     }
 
     // Fx modal content
