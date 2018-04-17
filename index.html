@@ -77,6 +77,7 @@
             <span class="button is-warning is-medium modal-button" data-target="modal-fadeInScale-fs">Modal Card "full-screen"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-top">3dSign "top"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-bottom">3dSignDown "bottom"</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-bgImage">Background Image</span>
         </div>
         <div class="container"></div>
     </section>
@@ -695,7 +696,22 @@ $modal-bg-color: rgba($black,.86);</code></pre>
         <button class="modal-close is-large" aria-label="close"></button>
     </div>
 
-
+    <div id="modal-bgImage" class="modal modal-fx-3dSignDown">
+        <div class="modal-background" style="background-image:url(img/moon.jpg)"></div>
+        <div class="modal-content">
+            <!-- content -->
+<pre><code class="html">&lt;div id="modal-id" class="modal <em>modal-fx-fadeInScale</em>"&gt;
+    &lt;div class="modal-background" style="background-image:url(img/moon.jpg)"&gt;&lt;/div&gt;
+    &lt;div class="modal-content"&gt;
+        &lt;!-- Any other Bulma elements you want --&gt;
+    &lt;/div&gt;
+    &lt;button class="modal-close is-large" aria-label="close"&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
 
     <script src="dist/js/modal-fx.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
