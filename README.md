@@ -29,11 +29,16 @@ example: `modal-fx-newsPaper`
 ### Examples
 https://postare.github.io/bulma-modal-fx/
 
+## INSTALL
+`npm i bulma-modal-fx`
+
+or simply download latest release: https://github.com/postare/bulma-modal-fx/releases/download/v1.0.2/bulma-modal-fx-v1.0.2.zip
+
 ## GETTING STARTED
 Include the plugin css file:
 
 ```html
-<link  rel="stylesheet"  href="dist/css/modal-fx.min.css" />
+<link  rel="stylesheet" href="dist/css/modal-fx.min.css" />
 ```
  
 (optional) Include the plugin just before body closing tag:
@@ -41,7 +46,18 @@ Include the plugin css file:
 <script type="text/javascript" src="dist/js/modal-fx.min.js"></script>
 ```
 
+**Or use a CDN**
+
+```html
+<link  rel="stylesheet" href="https://unpkg.com/bulma-modal-fx@1.0.3/dist/css/modal-fx.min.css" />
+```
+
+```html
+<script type="text/javascript" src="https://unpkg.com/bulma-modal-fx@1.0.3/dist/js/modal-fx.min.js"></script>
+```
+
 ### HTML MARKUP
+
 ```html
 <!-- trigger button -->
 <span class="button modal-button" data-target="modal-id">Open modal</span> 
@@ -59,16 +75,20 @@ Include the plugin css file:
 <div id="modal-id" class="modal modal-fx-fadeInScale is-active"></div>[...]
 ```
 
+[Bulma documentation on modal](https://bulma.io/documentation/components/modal/)
+
 ### MODIFIERS
-Class modifiers  `.modal-content`:
+
+Class modifiers for `.modal`:
+
+-   `.modal-pos-top`: modal positioned on top
+-   `.modal-pos-bottom`: modal positioned on bottom
+
+Class modifiers for `.modal-content`:
 
 -   `.is-huge`: 100% width modal
 -   `.is-tiny`: 400px width modal
 
-Class modifiers  `.modal`:
-
--   `.modal-pos-top`: modal positioned on top
--   `.modal-pos-bottom`: modal positioned on bottom
 
 ### SASS VARIABLES
 
@@ -77,12 +97,6 @@ Class modifiers  `.modal`:
 $transition-duration: .3s;
 $transition-duration-newsPaper: .7s;
 $transition-duration-3dslit: .5s;
-
 $modal-perspective: 1300px;
 $modal-bg-color: rgba($black,.86);
 ```
-
-### install
-`npm i bulma-modal-fx`
-
-or simply download latest release: https://github.com/postare/bulma-modal-fx/releases/download/v1.0.2/bulma-modal-fx-v1.0.2.zip
