@@ -88,6 +88,7 @@ Class modifiers for `.modal-content`:
 
 -   `.is-huge`: 100% width modal
 -   `.is-tiny`: 400px width modal
+-   `.is-image`: if the content is an image
 
 
 ### SASS VARIABLES

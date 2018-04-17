@@ -72,6 +72,7 @@
         <div class="buttons">
             <span class="button is-warning is-medium modal-button" data-target="modal-image">Image modal</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-image2">Image modal "huge"</span>
+            <span class="button is-warning is-medium modal-button" data-target="modal-image3">Image modal "huge" (very high)</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-card">Card "tiny"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-fadeInScale-fs">Modal Card "full-screen"</span>
             <span class="button is-warning is-medium modal-button" data-target="modal-3dSign-top">3dSign "top"</span>
@@ -159,6 +160,7 @@
             <ul>
                 <li><code>.is-huge</code>: 100% width modal</li>
                 <li><code>.is-tiny</code>: 400px width modal</li>
+                <li><code>.is-image</code>: if the content is an image</li>
             </ul>
 
             <div class="spacer"></div>           
@@ -555,11 +557,9 @@ $modal-bg-color: rgba($black,.86);</code></pre>
     <!-- Image modal -->
     <div id="modal-image" class="modal modal-fx-superScaled">
         <div class="modal-background"></div>
-        <div class="modal-content">
+        <div class="modal-content is-image">
             <!-- content -->
-            <p class="image">
-                <img src="img/moon.jpg" alt="Moon">
-            </p>
+            <img src="img/moon.jpg" alt="Moon">
             <!-- end content -->
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
@@ -567,11 +567,20 @@ $modal-bg-color: rgba($black,.86);</code></pre>
     <!-- Image modal -->
     <div id="modal-image2" class="modal modal-fx-superScaled">
         <div class="modal-background"></div>
-        <div class="modal-content is-huge">
+        <div class="modal-content is-huge is-image">
             <!-- content -->
-            <p class="image">
-                <img src="img/moon.jpg" alt="Moon">
-            </p>
+            <img src="img/moon.jpg" alt="Moon">
+            <!-- end content -->
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <!-- Image modal -->
+    <div id="modal-image3" class="modal modal-fx-superScaled">
+        <div class="modal-background"></div>
+        <div class="modal-content is-huge is-image">
+            <!-- content -->
+            <img src="img/tower.jpg" alt="Tower">
             <!-- end content -->
         </div>
         <button class="modal-close is-large" aria-label="close"></button>
