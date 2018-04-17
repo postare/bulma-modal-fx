@@ -32,7 +32,7 @@ https://postare.github.io/bulma-modal-fx/
 ## INSTALL
 `npm i bulma-modal-fx`
 
-or simply download latest release: https://github.com/postare/bulma-modal-fx/releases/download/v1.0.2/bulma-modal-fx-v1.0.2.zip
+or simply download latest release: https://github.com/postare/bulma-modal-fx/releases/download/v1.1.0/bulma-modal-fx-v1.1.0.zip
 
 ## GETTING STARTED
 Include the plugin css file:
@@ -49,11 +49,11 @@ Include the plugin css file:
 **Or use a CDN**
 
 ```html
-<link  rel="stylesheet" href="https://unpkg.com/bulma-modal-fx@1.0.3/dist/css/modal-fx.min.css" />
+<link  rel="stylesheet" href="https://unpkg.com/bulma-modal-fx@1.1.0/dist/css/modal-fx.min.css" />
 ```
 
 ```html
-<script type="text/javascript" src="https://unpkg.com/bulma-modal-fx@1.0.3/dist/js/modal-fx.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/bulma-modal-fx@1.1.0/dist/js/modal-fx.min.js"></script>
 ```
 
 ### HTML MARKUP
