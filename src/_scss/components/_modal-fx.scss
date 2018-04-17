@@ -332,14 +332,16 @@
         // type
         &.is-image {
             text-align: center;
+
+            &.is-huge {
+                width:auto;
+            }
       
             img {
                 max-height: calc(100vh - 50px);
             }
         }
-    }
-
-    
+    }  
 
     // Positioning, center is default
     // .modal-pos-top

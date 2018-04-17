@@ -317,6 +317,8 @@
     max-width: 400px; }
   .modal .modal-content.is-image {
     text-align: center; }
+    .modal .modal-content.is-image.is-huge {
+      width: auto; }
     .modal .modal-content.is-image img {
       max-height: calc(100vh - 50px); }
   .modal.modal-pos-top {
