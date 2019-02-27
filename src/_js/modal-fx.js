@@ -34,7 +34,7 @@
         };
 
         var closeAll = function() {
-            var openModal = document.querySelectorAll('.' + elements.active);
+            var openModal = document.querySelectorAll('.modal.' + elements.active);
             openModal.forEach(function (modal) {
                 modal.classList.remove(elements.active);
             })
